@@ -10,7 +10,7 @@ ap = argparse.ArgumentParser(description = 'Load an image and display it')
 
 ap.add_argument('-i', '--image', required = True, 
 	help = 'path to input image')
-args - vars(ap.parse_args())
+args = vars(ap.parse_args())
 
 
 
