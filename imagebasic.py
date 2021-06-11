@@ -10,7 +10,8 @@ ap = argparse.ArgumentParser(description = 'Load an image and display it')
 
 ap.add_argument('-i', '--image', required = True, 
 	help = 'path to input image')
-ap.add_argument('-o')
+ap.add_argument('-o', '--output', required = True, 
+	help = 'path for the output image')
 args = vars(ap.parse_args())
 
 
@@ -26,9 +27,9 @@ image  = cv2.imread(args['image'])
 print("widht: {} pixels,\n height: {} pixels, \n channels:{}".format(w,h,c))
 
 # show the image and wait for a keypress
-cv2.imshow('Image', image)
+cv2.imshow('ImageWindow', image)
 cv2.waitKey(0)
 
 # Save the image again in the disk
 
-cv2.imwrite('newimage.jpg', image)
+cv2.imwrite(args['output'], image)
